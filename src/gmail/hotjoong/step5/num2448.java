@@ -4,42 +4,65 @@ import java.util.Scanner;
 
 public class num2448 {
 
+	static char[][] star_arr;
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		int k = 0;
-		int M = N/3;
+
+		star_arr = new char[N][N * 2 - 1];
 		
-		while (M >= 2) {
-			k++;
-			M /= 2;
+
+		for (int j = 0; j < N; j++) {
+			for (int i = 0; i < N * 2 - 1; i++) {
+				star_arr[j][i] = ' ';
+			}
 		}
-		k_check(k,N);
 		
+		if (N == 3) {
+			star_stamp2(2,0);
+			for (int i = 0; i < N; i++) {
+				System.out.println(star_arr[i]);
+			}
+			return;
+		}
+
+		int x = N;
+		int y = 1;
+		int n = (int) (Math.log(N / 3) / Math.log(2));
+		star(n, x, y);
+
+		for (int i = 0; i < N; i++) {
+			System.out.println(star_arr[i]);
+		}
 	}
 
-//	private static void k_check2(int k, int N) {
-//		String[] star_line = new String[N+1];
-//		star_line = k_check(1, 6);
-//		
-//	}
+	public static void star(int n, int x, int y) {
 
-	public static String[] k_check(int k, int N) {
-		String[] star_line = new String[N+1];
-		star_line[1] = "  *  ";
-		star_line[2] = " * * ";
-		star_line[3] = "*****";
-		
-		for(int j=N/2+1 ; j<=N ; j++) {
-			star_line[j] = star_line[j-N/2] + " " + star_line[j-N/2];
+		if (n == 1) {
+			star_stamp(x, y);
+		} else {
+			star(n - 1, x, y);
+			star(n - 1, x - 3 * (int) (Math.pow(2, n - 1)), y + 3 * (int) (Math.pow(2, n - 1)));
+			star(n - 1, x + 3 * (int) (Math.pow(2, n - 1)), y + 3 * (int) (Math.pow(2, n - 1)));
 		}
-		
-		for(int i=1 ; i<k ; i++) {
-			k_check(i,N/2);
-		}
-		for(int i=1; i<star_line.length ; i++) {
-			System.out.println(star_line);
-		}
-		return star_line;
 	}
+
+	public static void star_stamp(int x, int y) {
+		star_stamp2(x - 1, y - 1);
+		star_stamp2(x - 4, y + 2);
+		star_stamp2(x + 2, y + 2);
+	}
+
+	public static void star_stamp2(int x, int y) {
+		star_arr[y][x] = '*';
+		star_arr[y + 1][x - 1] = '*';
+		star_arr[y + 1][x + 1] = '*';
+		star_arr[y + 2][x - 2] = '*';
+		star_arr[y + 2][x - 1] = '*';
+		star_arr[y + 2][x] = '*';
+		star_arr[y + 2][x + 1] = '*';
+		star_arr[y + 2][x + 2] = '*';
+	}
+
 }
