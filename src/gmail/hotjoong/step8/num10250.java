@@ -16,8 +16,6 @@ public class num10250 {
 			W[t] = sc.nextInt();
 			N[t] = sc.nextInt();
 			if(N[t]==1) {
-				result[t] = "101";
-				continue;
 			}
 			if(H[t]==1) {
 				if(N[t]>10)
