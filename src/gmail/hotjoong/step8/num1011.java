@@ -17,45 +17,38 @@ public class num1011 {
 			route[i] = 0;
 		}
 		
-		int c, max, remainder;
+		int max, sub, except;
+		
 		for(int i=0; i<T; i++) {
-			c=0;
 			max=0;
-			remainder = 0;
+			except = 0;
 			while(true){
-				c++;
-				if(distance[i]<Math.pow(c, 2)) {
-					max = c-1;
+				max++;
+				if(distance[i]<Math.pow(max, 2)) {
+					break;
+				}else if(distance[i]==Math.pow(max, 2)) {
+					except = max;
 					break;
 				}
 			}
-			for(int j=0; j<max; j++) {
-				route[i]+=j+1;
-			}
-			route[i]+=route[i]-max;
-			remainder = distance[i] - route[i];
 			
-			int temp=0;
-			int max_temp=0,route_temp=0;
-			temp=remainder;
-			max_temp=max;
-			while(true) {
-				if(temp%max_temp==0) {
-					route[i]+=temp/max_temp + route_temp;
-					break;
-				}else if(temp>max_temp) {
-					route_temp+=temp/max_temp;
-					temp%=max_temp;
-					max_temp--;
+			if(except>0) {
+				route[i] = except*2 -1;
+				continue;
+			}else {
+				sub = (int) Math.pow(max, 2) - distance[i] + 1;
+				if(sub>max) {
+					route[i] = max*2 -2;
+					continue;
 				}else {
-					route_temp = 0;
-					temp=remainder;
-					max_temp--;
+					route[i] = max*2 -1;
+					continue;
 				}
 			}
 		}
-		for(int temp:distance)
-			System.out.println(temp); 
+		for(int temp : route) {
+			System.out.println(temp);
+		}
 	}
 
 }
