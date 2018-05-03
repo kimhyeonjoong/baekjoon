@@ -15,10 +15,9 @@ public class num10250 {
 			H[t] = sc.nextInt();
 			W[t] = sc.nextInt();
 			N[t] = sc.nextInt();
-			if(N[t]==1) {
-			}
+			
 			if(H[t]==1) {
-				if(N[t]>10)
+				if(N[t]>9)
 					result[t] = "1" + N[t];
 				else
 					result[t] = "10" + N[t];
@@ -26,15 +25,14 @@ public class num10250 {
 			}
 			if(N[t]%H[t]==0) {
 				result[t] = H[t] + "";
-				if(N[t]/H[t]>10)
+				if(N[t]/H[t]>9)
 					result[t] += (N[t]/H[t]) + "";
 				else
 					result[t] += "0" + (N[t]/H[t]);
-			}
-			else {
+			}else {
 				result[t] = N[t]%H[t] + "";
-				if(N[t]/H[t]>10)
-					result[t] += (N[t]/H[t]) + "";
+				if(N[t]/H[t]>=9)
+					result[t] += (N[t]/H[t]+1) + "";
 				else
 					result[t] += "0" + (N[t]/H[t]+1);
 			}
