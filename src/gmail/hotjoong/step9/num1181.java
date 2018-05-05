@@ -1,6 +1,7 @@
 package gmail.hotjoong.step9;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class num1181 {
@@ -15,22 +16,19 @@ public class num1181 {
 			if(!word_list.contains(in))
 				word_list.add(in);
 		}
-		for(int i=0; i<word_list.size(); i++) {
-			System.out.println(word_list.get(i));
-		}
-		String temp="";
-		for(int i=0; i<word_list.size()-1; i++) {
-			for(int j=1; j<word_list.size()-1; j++)
-				if((int)word_list.get(i).charAt(0) > (int)word_list.get(j).charAt(0)) {
-					
+		
+		Collections.sort(word_list);
+		
+		
+		
+		
+		for(int i=0; i<word_list.size(); i++)
+			for(int j=i+1; j<word_list.size(); j++)
+				if(word_list.get(i).length() > word_list.get(j).length()) {
+					word_list.add(i, word_list.get(j));
+					word_list.remove(j+1);
 				}
-		}
-		
-		//a-97 z-122
-		for(int i=0; i<word_list.size(); i++) {
+		for(int i=0; i<word_list.size(); i++)
 			System.out.println(word_list.get(i));
-		}
-		
 	}
-
 }
