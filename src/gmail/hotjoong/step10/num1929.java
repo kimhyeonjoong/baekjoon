@@ -13,25 +13,22 @@ public class num1929 {
 		}
 		int N = sc.nextInt();
 		ArrayList<Integer> number = new ArrayList();
-		ArrayList<Integer> result = new ArrayList();
-		boolean check=true;
-		int min=N;
-		for(int i=M; i<=N; i++) {
-			number.add(i);
+		for(int i=0; i<=N-M ; i++) {
+			number.add(M+i);
 		}
-		for(int i=0; i<=N-M; i++) {
-			for(int j=2; j<number.get(i); j++) {
-				if(number.get(i)%j==0)
-					check = false; 
+		int c=2;
+		for(int i=M ; i<=N/2 ; i++) {
+			while(i*c<=N) {
+				if(number.contains(i*c))
+					number.remove(number.indexOf(i*c));
+				c++;
 			}
-			if(check) {
-				result.add(number.get(i));
-			}
-			check=true;
+			c = 2;
 		}
+		
 
-		for(int i=0; i<result.size(); i++)
-			System.out.println(result.get(i));
+		for(int i=0; i<number.size(); i++)
+			System.out.println(number.get(i));
 	}
 
 }
