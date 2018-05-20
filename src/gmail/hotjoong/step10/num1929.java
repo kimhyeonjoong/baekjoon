@@ -12,23 +12,22 @@ public class num1929 {
 			M=2;
 		}
 		int N = sc.nextInt();
-		ArrayList<Integer> number = new ArrayList();
-		for(int i=0; i<=N-M ; i++) {
-			number.add(M+i);
-		}
-		int c=2;
-		for(int i=M ; i<=N/2 ; i++) {
-			while(i*c<=N) {
-				if(number.contains(i*c))
-					number.remove(number.indexOf(i*c));
-				c++;
-			}
-			c = 2;
+		
+		int[] number = new int[N-M+1];
+		for(int i=0; i<number.length; i++) {
+			number[i] = M+i;
 		}
 		
-
-		for(int i=0; i<number.size(); i++)
-			System.out.println(number.get(i));
+		for(int i=0; i<number.length; i++) {
+			if(number[i]==0)
+				continue;
+			for(int j=(i+M)+(i+M); j<N-M ;j+=(i+M)) {
+				number[j] = 0;
+			}
+		}
+		
+		for(int i=0; )
+		
 	}
 
 }
