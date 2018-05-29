@@ -27,8 +27,9 @@ public class num2504 {
 			bracket.replace("()", "2");
 			bracket.replace("()", "3");
 		}
-		while(bracket.contains("(")||bracket.contains(")")||bracket.contains("[")||bracket.contains("]")) {
-			
+		while(bracket.contains("(")||bracket.contains("[")) {
+			bracket = bracket.replaceFirst("(d)", );
+			bracket.indexOf("[.]");
 		}
 		
 		
