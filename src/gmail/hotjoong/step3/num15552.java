@@ -1,22 +1,46 @@
 package gmail.hotjoong.step3;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 public class num15552 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int T = sc.nextInt();
-		int A,B=0;
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		OutputStreamWriter osw = new OutputStreamWriter(System.out);
+		BufferedWriter bw = new BufferedWriter(osw);
+		int T=0;
+		try {
+			T = br.read();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+		
+		
 		int[] result = new int[T];
-		for(int i=0; i<T ; i++) {
-			A = sc.nextInt();
-			B = sc.nextInt();
-			result[i] = A+B;
-		}
+		int A = 0,B = 0;
+		
 		for(int i=0;  i<T ; i++) {
-			System.out.println(result[i]);
+			try {
+				String in = br.readLine();
+				bw.write(in); 
+				bw.flush(); 
+				bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 		}
+		
+		
+		
 	}
 
 }
