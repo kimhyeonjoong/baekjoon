@@ -69,8 +69,9 @@ public class num2173 {
 						for (int j = 0; j < op3; j++) {
 							AxB[robot[op1].getX()-1][robot[op1].getY()-1] = 0;
 							robot[op1].setY(robot[op1].getY() + 1);
-							if(robot[op1].getX()>A||robot[op1].getY()>B) {
+							if(robot[op1].getX()>A||robot[op1].getY()>B||robot[op1].getX()<=0||robot[op1].getY()<=0) {
 								 result.add("Robot "+op1+" crashes into the wall");
+								 ok = false;
 								 break;
 							}
 							if (AxB[robot[op1].getX() - 1][robot[op1].getY() - 1] != 0) {
@@ -85,8 +86,9 @@ public class num2173 {
 						for (int j = 0; j < op3; j++) {
 							AxB[robot[op1].getX()-1][robot[op1].getY()-1] = 0;
 							robot[op1].setX(robot[op1].getX() + 1);
-							if(robot[op1].getX()>A||robot[op1].getY()>B) {
+							if(robot[op1].getX()>A||robot[op1].getY()>B||robot[op1].getX()<=0||robot[op1].getY()<=0) {
 								 result.add("Robot "+op1+" crashes into the wall");
+								 ok = false;
 								 break;
 							}
 							if (AxB[robot[op1].getX() - 1][robot[op1].getY() - 1] != 0) {
@@ -101,8 +103,9 @@ public class num2173 {
 						for (int j = 0; j < op3; j++) {
 							AxB[robot[op1].getX()-1][robot[op1].getY()-1] = 0;
 							robot[op1].setY(robot[op1].getY() - 1);
-							if(robot[op1].getX()>A||robot[op1].getY()>B) {
+							if(robot[op1].getX()>A||robot[op1].getY()>B||robot[op1].getX()<=0||robot[op1].getY()<=0) {
 								 result.add("Robot "+op1+" crashes into the wall");
+								 ok = false;
 								 break;
 							}
 							if (AxB[robot[op1].getX() - 1][robot[op1].getY() - 1] != 0) {
@@ -117,8 +120,9 @@ public class num2173 {
 						for (int j = 0; j < op3; j++) {
 							AxB[robot[op1].getX()-1][robot[op1].getY()-1] = 0;
 							robot[op1].setX(robot[op1].getX() - 1);
-							if(robot[op1].getX()>A||robot[op1].getY()>B) {
+							if(robot[op1].getX()>A||robot[op1].getY()>B||robot[op1].getX()<=0||robot[op1].getY()<=0) {
 								 result.add("Robot "+op1+" crashes into the wall");
+								 ok = false;
 								 break;
 							}
 							if (AxB[robot[op1].getX() - 1][robot[op1].getY() - 1] != 0) {
