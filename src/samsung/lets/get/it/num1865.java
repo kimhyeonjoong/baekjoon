@@ -39,9 +39,10 @@ public class num1865 {
 			}
 			while(true) {
 				for(int i=0; i<N; i++) {
-					//우선선택
+					//우선선택 후 최대값
 					if(tmp[i]==0) {
-						staff.get(i)
+						max(N, staff.get(i));
+						
 					}
 				}
 				
@@ -52,7 +53,6 @@ public class num1865 {
 			}
 			
 		}
-		
 		
 	}
 	public static int max(int N, int[] work) {
