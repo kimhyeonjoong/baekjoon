@@ -24,24 +24,24 @@ public class num2206 {
 			}
 		}
 		
-		for(int i=0; i<N; i++) {
-			for(int j=0; j<M; j++) {
-				//상
-				if(check(i-1,j,N,M)) {
-					if(NxM[i-1][j]==0||NxM[i-1][j]==2)
-						
-				}
-				//하
-				if(check(i+1,j,N,M)) {
-				}
-				//좌
-				if(check(i,j-1,N,M)) {
-				}
-				//우
-				if(check(i,j+1,N,M)) {
-				}
-			}
-		}
+//		for(int i=0; i<N; i++) {
+//			for(int j=0; j<M; j++) {
+//				//상
+//				if(check(i-1,j,N,M)) {
+//					if(NxM[i-1][j]==0||NxM[i-1][j]==2)
+//						
+//				}
+//				//하
+//				if(check(i+1,j,N,M)) {
+//				}
+//				//좌
+//				if(check(i,j-1,N,M)) {
+//				}
+//				//우
+//				if(check(i,j+1,N,M)) {
+//				}
+//			}
+		
 		
 		
 //		for(int i=0; i<N; i++) {
